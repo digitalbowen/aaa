@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Alex Morgan</title>
+  <meta name="description" content="A project by Alex Morgan — a clean, friendly to-do list app." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>" />
+</head>
+<body>
+
+  <!-- ============ Navbar ============ -->
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark">A</span>
+        Alex Morgan
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+      </button>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="contact.html">Contact Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ Page hero ============ -->
+    <section class="page-hero">
+      <div class="container reveal">
+        <h1>My To-Do List ✅</h1>
+        <p>
+          A little app I built to keep life organized — pick a date, add your task, and enjoy the
+          satisfying feeling of checking things off.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 1rem;">
+      <div class="container todo-wrap">
+
+        <!-- ============ To-do card ============ -->
+        <div class="todo-card reveal">
+
+          <!-- Add-task form -->
+          <form class="todo-form" id="todoForm" novalidate>
+            <div class="todo-form__main">
+              <div class="field todo-field-task">
+                <label class="todo-label" for="todoInput">Task</label>
+                <input
+                  type="text"
+                  id="todoInput"
+                  placeholder="e.g. Finish portfolio design"
+                  autocomplete="off"
+                  maxlength="120" />
+              </div>
+              <div class="field todo-field-date">
+                <label class="todo-label" for="todoDate">Date</label>
+                <input type="date" id="todoDate" />
+              </div>
+              <div class="field todo-field-pickers">
+                <span class="todo-label">Options</span>
+                <div class="todo-pickers">
+                  <div class="emoji-picker" id="emojiPicker">
+                    <button
+                      type="button"
+                      class="emoji-picker__btn"
+                      id="emojiBtn"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      aria-label="Task emoji: 📌 — change">📌</button>
+                    <div class="emoji-picker__pop" id="emojiPop">
+                      <button type="button" class="emoji-option is-selected" data-emoji="📌" aria-label="Pin">📌</button>
+                      <button type="button" class="emoji-option" data-emoji="✅" aria-label="Check mark">✅</button>
+                      <button type="button" class="emoji-option" data-emoji="🎯" aria-label="Target">🎯</button>
+                      <button type="button" class="emoji-option" data-emoji="📚" aria-label="Books">📚</button>
+                      <button type="button" class="emoji-option" data-emoji="💼" aria-label="Briefcase">💼</button>
+                      <button type="button" class="emoji-option" data-emoji="🏠" aria-label="House">🏠</button>
+                      <button type="button" class="emoji-option" data-emoji="🛒" aria-label="Shopping cart">🛒</button>
+                      <button type="button" class="emoji-option" data-emoji="💪" aria-label="Flexed biceps">💪</button>
+                      <button type="button" class="emoji-option" data-emoji="⏰" aria-label="Alarm clock">⏰</button>
+                      <button type="button" class="emoji-option" data-emoji="🎨" aria-label="Art">🎨</button>
+                      <button type="button" class="emoji-option" data-emoji="🎵" aria-label="Music">🎵</button>
+                      <button type="button" class="emoji-option" data-emoji="💰" aria-label="Money bag">💰</button>
+                      <button type="button" class="emoji-option" data-emoji="📞" aria-label="Phone">📞</button>
+                      <button type="button" class="emoji-option" data-emoji="🧹" aria-label="Broom">🧹</button>
+                      <button type="button" class="emoji-option" data-emoji="☕" aria-label="Coffee">☕</button>
+                      <button type="button" class="emoji-option" data-emoji="🎁" aria-label="Gift">🎁</button>
+                      <button type="button" class="emoji-option emoji-option--none" data-emoji="" aria-label="No emoji">None</button>
+                    </div>
+                  </div>
+                  <div class="prio-picker" id="prioPicker" role="radiogroup" aria-label="Task priority">
+                    <button type="button" class="prio-btn prio-btn--low" data-prio="low" role="radio" aria-checked="false">Low</button>
+                    <button type="button" class="prio-btn prio-btn--medium is-selected" data-prio="medium" role="radio" aria-checked="true">Med</button>
+                    <button type="button" class="prio-btn prio-btn--high" data-prio="high" role="radio" aria-checked="false">High</button>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn--primary todo-add-btn" type="submit">Add</button>
+            </div>
+            <p class="todo-error" id="todoError" role="alert"></p>
+          </form>
+
+          <!-- Summary -->
+          <div class="todo-summary" id="todoSummary" aria-live="polite">
+            <span id="todoCount">0 tasks</span>
+          </div>
+
+          <!-- Task list -->
+          <ul class="todo-list" id="todoList"></ul>
+
+          <!-- Empty state -->
+          <div class="todo-empty" id="todoEmpty">
+            <div class="todo-empty__icon">📝</div>
+            <p>No tasks yet</p>
+            <span>Add your first task above to get started!</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__fact">
+          <span class="icon">💡</span>
+          <div>
+            <strong>Fun fact about me</strong>
+            <span>I once held a (very unofficial) world record for stacking the most gummy bears on a spoon — 24!</span>
+          </div>
+        </div>
+        <div class="footer__social">
+          <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">G</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a href="https://dribbble.com/" target="_blank" rel="noopener" aria-label="Dribbble">Dr</a>
+          <a href="mailto:hello@alexmorgan.example" aria-label="Email">@</a>
+        </div>
+      </div>
+      <p class="footer__bottom">© 2026 Alex Morgan · Made with care, cinnamon, and a little CSS ✨</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

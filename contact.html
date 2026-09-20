@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Me — Alex Morgan</title>
+  <meta name="description" content="Get in touch with Alex Morgan — email, social links, and a friendly contact form." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>" />
+</head>
+<body>
+
+  <!-- ============ Navbar ============ -->
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark">A</span>
+        Alex Morgan
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+      </button>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html" class="active">Contact Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ Page hero ============ -->
+    <section class="page-hero">
+      <div class="container reveal">
+        <h1>Let's Chat 💌</h1>
+        <p>
+          Have a project in mind, a question, or just want to swap cinnamon roll recommendations?
+          My inbox is always open.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 1.5rem;">
+      <div class="container contact-grid">
+
+        <!-- ============ Contact info ============ -->
+        <div class="contact-info">
+          <div class="contact-item reveal">
+            <div class="contact-item__icon">✉️</div>
+            <div>
+              <strong>Email me at</strong>
+              <a href="mailto:hello@alexmorgan.example">hello@alexmorgan.example</a>
+            </div>
+          </div>
+
+          <div class="contact-item reveal">
+            <div class="contact-item__icon">💼</div>
+            <div>
+              <strong>Find me on LinkedIn</strong>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener">linkedin.com/in/alexmorgan</a>
+            </div>
+          </div>
+
+          <div class="contact-item reveal">
+            <div class="contact-item__icon">🐙</div>
+            <div>
+              <strong>Peek at my code</strong>
+              <a href="https://github.com/" target="_blank" rel="noopener">github.com/alexmorgan</a>
+            </div>
+          </div>
+
+          <div class="contact-item reveal">
+            <div class="contact-item__icon">⏰</div>
+            <div>
+              <strong>Usually replying</strong>
+              <span class="value">Mon–Fri, within about a day</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ Contact form ============ -->
+        <div class="contact-form-card reveal">
+          <form id="contactForm" novalidate>
+            <h3>Send me a message</h3>
+            <p>Fill in the form below and I'll get back to you as soon as I can. 😊</p>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Your name</label>
+                <input type="text" id="name" name="name" placeholder="Jamie Rivera" autocomplete="name" />
+                <p class="error-msg">Please tell me your name.</p>
+              </div>
+              <div class="field">
+                <label for="email">Your email</label>
+                <input type="email" id="email" name="email" placeholder="jamie@example.com" autocomplete="email" />
+                <p class="error-msg">Please enter a valid email address.</p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Let's work together!" />
+              <p class="error-msg">A quick subject helps a lot.</p>
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell me a little about what you have in mind..."></textarea>
+              <p class="error-msg">Please write a short message (at least 10 characters).</p>
+            </div>
+
+            <button class="btn btn--primary" type="submit">Send message ✈️</button>
+            <p class="form-note">This is a demo form — no message actually leaves your browser.</p>
+          </form>
+
+          <div class="form-success" id="formSuccess" role="status" aria-live="polite">
+            <div class="check">✅</div>
+            <h4>Message sent!</h4>
+            <p>Thanks for reaching out — I'll reply soon. In the meantime, have a wonderful day! 🌞</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__fact">
+          <span class="icon">💡</span>
+          <div>
+            <strong>Fun fact about me</strong>
+            <span>I once held a (very unofficial) world record for stacking the most gummy bears on a spoon — 24!</span>
+          </div>
+        </div>
+        <div class="footer__social">
+          <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">G</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a href="https://dribbble.com/" target="_blank" rel="noopener" aria-label="Dribbble">Dr</a>
+          <a href="mailto:hello@alexmorgan.example" aria-label="Email">@</a>
+        </div>
+      </div>
+      <p class="footer__bottom">© 2026 Alex Morgan · Made with care, cinnamon, and a little CSS ✨</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

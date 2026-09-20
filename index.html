@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex Morgan — Hi there!</title>
+  <meta name="description" content="The personal website of Alex Morgan — designer, builder, and lifelong learner. Welcome!" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>" />
+</head>
+<body>
+
+  <!-- ============ Navbar ============ -->
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark">A</span>
+        Alex Morgan
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+      </button>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ Hero ============ -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__text reveal">
+          <span class="hero__badge">🌅 Welcome to my little corner of the web</span>
+          <h1>
+            <span class="wave">👋</span> Hi, I'm
+            <span class="highlight">Alex Morgan!</span>
+          </h1>
+          <p class="hero__intro">
+            I'm a product designer and front-end developer based in Portland. I love turning fuzzy ideas
+            into warm, friendly digital experiences that make people smile. When I'm not designing,
+            you'll probably find me hunting for the city's best cinnamon roll.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="projects.html">See my projects</a>
+            <a class="btn btn--ghost" href="contact.html">Say hello</a>
+          </div>
+        </div>
+
+        <div class="hero__photo reveal">
+          <div class="blob" aria-hidden="true"></div>
+          <img
+            src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=cool%20friendly%20illustrated%20portrait%20of%20a%20smiling%20young%20person%2C%20ocean%20blue%20and%20teal%20green%20colors%2C%20rounded%20modern%20digital%20illustration%2C%20headshot%2C%20calm%20breezy%20background&image_size=square_hd"
+            alt="Illustrated portrait of Alex Morgan smiling"
+            data-fallback="avatar" />
+          <span class="chip chip--1">☕ Coffee-powered</span>
+          <span class="chip chip--2">🎨 Design nerd</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Three things I like ============ -->
+    <section class="section section--alt" id="things">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">A little about me</span>
+          <h2>Three things I absolutely love</h2>
+          <p>These are the ingredients that make my days feel full and fun.</p>
+        </div>
+
+        <div class="things-grid">
+          <article class="thing-card reveal">
+            <div class="thing-card__icon">📷</div>
+            <h3>Photography</h3>
+            <p>
+              I chase golden-hour light everywhere I go. My camera roll is 90% sunsets,
+              street cats, and latte art I was weirdly proud of.
+            </p>
+          </article>
+
+          <article class="thing-card reveal">
+            <div class="thing-card__icon">🥾</div>
+            <h3>Weekend Hikes</h3>
+            <p>
+              Give me a trail, a packed sandwich, and no cell service. I always come back
+              with muddy boots and a recharged brain.
+            </p>
+          </article>
+
+          <article class="thing-card reveal">
+            <div class="thing-card__icon">🎸</div>
+            <h3>Playing Ukulele</h3>
+            <p>
+              I own a tiny coconut-shaped ukulele and know approximately four songs all the
+              way through — but I play them with great enthusiasm.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__fact">
+          <span class="icon">💡</span>
+          <div>
+            <strong>Fun fact about me</strong>
+            <span>I once held a (very unofficial) world record for stacking the most gummy bears on a spoon — 24!</span>
+          </div>
+        </div>
+        <div class="footer__social">
+          <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">G</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a href="https://dribbble.com/" target="_blank" rel="noopener" aria-label="Dribbble">Dr</a>
+          <a href="mailto:hello@alexmorgan.example" aria-label="Email">@</a>
+        </div>
+      </div>
+      <p class="footer__bottom">© 2026 Alex Morgan · Made with care, cinnamon, and a little CSS ✨</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
