@@ -8,8 +8,39 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>" />
+  <!-- ============ 红色主题全覆盖 ============ -->
+  <style>
+    :root { --accent-red: #e74c3c; --accent-red-soft: rgba(231,76,60,0.12); }
+    /* 标题全部红 */
+    h1, h2 { color: var(--accent-red) !important; }
+    /* 品牌字母 A */
+    .brand__mark { color: var(--accent-red) !important; }
+    /* 导航当前页 + hover */
+    .nav-links a.active { color: var(--accent-red) !important; border-bottom-color: var(--accent-red) !important; }
+    .nav-links a:hover { color: var(--accent-red) !important; }
+    /* 按钮 */
+    .btn--primary { background: var(--accent-red) !important; border-color: var(--accent-red) !important; color: #fff !important; }
+    .btn--primary:hover { background: #c0392b !important; border-color: #c0392b !important; }
+    /* 卡片顶边 + 边框 */
+    .todo-card, .weather-card { border: 1px solid #f5b7b1 !important; border-top: 4px solid var(--accent-red) !important; box-shadow: 0 6px 24px var(--accent-red-soft) !important; }
+    /* 空状态图标 */
+    .todo-empty__icon { color: var(--accent-red); }
+    /* 天气状态小字 */
+    .weather-status { color: #922b21; }
+    /* 优先级选中态 */
+    .prio-btn.is-selected { background: var(--accent-red) !important; color: #fff !important; border-color: var(--accent-red) !important; }
+    /* emoji 弹窗选中 */
+    .emoji-option.is-selected { outline: 2px solid var(--accent-red); }
+    /* 页脚点缀 */
+    .footer__fact .icon { color: var(--accent-red); }
+    .footer__bottom { color: #7b241c; }
+    /* 错误提示 */
+    .todo-error { color: var(--accent-red) !important; }
+    /* eyebrow 小标签 */
+    .eyebrow { color: var(--accent-red) !important; }
+  </style>
 </head>
 <body>
 
@@ -36,10 +67,10 @@
     <!-- ============ Page hero ============ -->
     <section class="page-hero">
       <div class="container reveal">
-        <h1>My To-Do List ✅</h1>
+        <h1>My Projects ✨</h1>
         <p>
-          A little app I built to keep life organized — pick a date, add your task, and enjoy the
-          satisfying feeling of checking things off.
+          A couple of little apps I built — a to-do list to keep life organized, and a weather app
+          that shows the current conditions for any city you search.
         </p>
       </div>
     </section>
@@ -127,6 +158,44 @@
         </div>
       </div>
     </section>
+
+    <!-- ============ Weather app ============ -->
+    <section class="section" style="padding-top: 1rem;">
+      <div class="container weather-wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Another project</span>
+          <h2>Weather App ☀️</h2>
+          <p>Type a city name and I'll look up its current conditions.</p>
+        </div>
+
+        <div class="weather-card reveal">
+          <form class="weather-form" id="weatherForm" novalidate>
+            <div class="weather-field">
+              <label class="weather-label" for="weatherInput">City</label>
+              <input
+                type="text"
+                id="weatherInput"
+                placeholder="e.g. Suzhou, Beijing, London"
+                autocomplete="off" />
+            </div>
+            <button class="btn btn--primary weather-btn" type="submit">Search</button>
+          </form>
+
+          <p class="weather-status" id="weatherStatus" role="status" aria-live="polite">
+            Enter a city to get started.
+          </p>
+
+          <div class="weather-result" id="weatherResult" hidden>
+            <span class="weather-icon" id="weatherIcon" aria-hidden="true">🌤️</span>
+            <div class="weather-info">
+              <span class="weather-city" id="weatherCity">—</span>
+              <span class="weather-temp" id="weatherTemp">—</span>
+              <span class="weather-cond" id="weatherCond">—</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- ============ Footer ============ -->
@@ -151,6 +220,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
